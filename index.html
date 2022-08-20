@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>IDE For Web Dev</title>
+    <title>Online IDE For Web Dev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       body {
@@ -9,7 +9,7 @@
 
 textarea {
   width: 33%;
-  float: top;
+  
   min-height: 330px;
   overflow: scroll;
   margin: auto;
@@ -34,20 +34,20 @@ iframe {
   <body>
     <textarea id="HTML" placeholder="HTML"></textarea>
     <textarea id="CSS" placeholder="CSS"></textarea>
-    <textarea id="CSS" placeholder="JS"></textarea>
+    <textarea id="JS" placeholder="JS"></textarea>
     <iframe id="frame"></iframe>
 
     <script>
       function f() {
 
-var HTML = document.getElementById("html");
+var HTML = document.getElementById("HTML");
 var CSS = document.getElementById("CSS");
 var JS = document.getElementById("JS");
 var frame = document.getElementById("frame").contentWindow.document;
 
 document.getElementById("HTML").style.color = 'white';
 document.getElementById("CSS").style.color = 'white';
-document.getElementById("CSS").style.color = 'white';
+document.getElementById("JS").style.color = 'white';
 
 document.body.onkeyup = function() {
   frame.open();
