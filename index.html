@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>IDE For Web Dev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+  text-align: center;
+}
+
+textarea {
+  width: 33%;
+  float: top;
+  min-height: 330px;
+  overflow: scroll;
+  margin: auto;
+  display: inline-block;
+  background:black;
+  outline: none;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  
+}
+
+iframe {
+  bottom: 0;
+  border-style: groove;
+  position: relative;
+  width: 100%;
+  min-height: 19em;
+}
+    </style>
+  </head>
+
+  <body>
+    <textarea id="HTML" placeholder="HTML"></textarea>
+    <textarea id="CSS" placeholder="CSS"></textarea>
+    <textarea id="CSS" placeholder="JS"></textarea>
+    <iframe id="frame"></iframe>
+
+    <script>
+      function f() {
+
+var HTML = document.getElementById("html");
+var CSS = document.getElementById("CSS");
+var JS = document.getElementById("JS");
+var frame = document.getElementById("frame").contentWindow.document;
+
+document.getElementById("HTML").style.color = 'white';
+document.getElementById("CSS").style.color = 'white';
+document.getElementById("CSS").style.color = 'white';
+
+document.body.onkeyup = function() {
+  frame.open();
+  frame.writeln(
+    HTML.value +
+      "<style>" +
+      CSS.value +
+      "</style>" +
+      "<script>" +
+      JS.value +
+      "<script>"
+  );
+  frame.close();
+};
+}
+
+f();
+    </script>
+  </body>
+</html> 
